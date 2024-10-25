@@ -21,10 +21,8 @@ RSpec.describe Net::SMTP::AuthNTLM do
     end
 
     context "when NTLM is available" do
-      let(:challenge_init) do
-        "NTLMSSP\x00\x01\x00\x00\x00\a\x82\b\x00\x00\x00\x00\x00 \x00\x00\x00\x00\x00\x00\x00 \x00\x00\x00#{Socket.gethostname}" # rubocop:disable Layout/LineLength
-      end
-      let(:challenge_init_msg) { "AUTH NTLM #{Base64.encode64(challenge_init).strip}" }
+      let(:challenge_init) { Net::NTLM::Message::Type1.new.encode64 }
+      let(:challenge_init_msg) { "AUTH NTLM #{challenge_init}" }
       let(:challenge_response) do
         # sample type 2 from https://github.com/WinRb/rubyntlm/blob/master/spec/lib/net/ntlm/message/type2_spec.rb#L22
         Net::SMTP::Response.parse("334 TlRMTVNTUAACAAAAHAAcADgAAAAFgooCJ+UA1//+ZM4AAAAAAAAAAJAAkABUAAAABgGxHQAAAA9WAEEARwBSAEEATgBUAC0AMgAwADAAOABSADIAAgAcAFYAQQBHAFIAQQBOAFQALQAyADAAMAA4AFIAMgABABwAVgBBAEcAUgBBAE4AVAAtADIAMAAwADgAUgAyAAQAHAB2AGEAZwByAGEAbgB0AC0AMgAwADAAOABSADIAAwAcAHYAYQBnAHIAYQBuAHQALQAyADAAMAA4AFIAMgAHAAgAZBMdFHQnzgEAAAAA") # rubocop:disable Layout/LineLength
