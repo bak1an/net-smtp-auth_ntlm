@@ -2,7 +2,7 @@
 
 `Net::SMTP::Authenticator` implementation for NTLM authentication based on [rubyntlm](https://github.com/WinRb/rubyntlm) gem.
 
-Does the same thing as [ruby-ntlm](https://github.com/macks/ruby-ntlm) gem did but works out of the box with modern `net-smtp` and `openssl`.
+Does the same thing as [ruby-ntlm](https://github.com/macks/ruby-ntlm) gem but works out of the box with modern `net-smtp` (fixes https://github.com/macks/ruby-ntlm/issues/10) and `openssl` (fixes https://github.com/macks/ruby-ntlm/issues/9).
 
 ## Installation
 
