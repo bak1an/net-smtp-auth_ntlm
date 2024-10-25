@@ -12,3 +12,6 @@ Style/StringLiteralsInInterpolation:
 # Do it the same way net/smtp does
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Metrics/BlockLength:
+  Max: 40
