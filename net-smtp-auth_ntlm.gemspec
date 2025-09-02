@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = "net-smtp-auth_ntlm"
-  spec.version = "0.1.1"
+  spec.version = "0.2.0"
   spec.authors = ["Anton Baklanov"]
   spec.email = ["antonbaklanov@gmail.com"]
 
@@ -31,6 +31,6 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "net-smtp", "~> 0.4"
+  spec.add_dependency "net-smtp", "~> 0.5"
   spec.add_dependency "rubyntlm", "~> 0.6"
 end
