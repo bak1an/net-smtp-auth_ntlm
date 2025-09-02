@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = "net-smtp-auth_ntlm"
-  spec.version = "0.1"
+  spec.version = "0.1.1"
   spec.authors = ["Anton Baklanov"]
   spec.email = ["antonbaklanov@gmail.com"]
 

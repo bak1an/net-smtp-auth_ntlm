@@ -11,7 +11,7 @@ class Net::SMTP
     auth_type :ntlm
 
     def auth(user, secret)
-      raise Net::SMTPAuthenticationError, "NTLM not supported" unless smtp.auth_capable?("NTLM")
+      raise Net::SMTPAuthenticationError, "NTLM not supported" unless smtp.send(:auth_capable?, "NTLM")
 
       domain, user = if user.index("\\")
                        user.split("\\", 2)
